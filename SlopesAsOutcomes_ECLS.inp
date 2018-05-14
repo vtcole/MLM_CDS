@@ -1,0 +1,15 @@
+ TITLE:	ECLS-K data, Slopes-as-outcomes;
+  DATA:	FILE = ecls-k.dat;
+  VARIABLE:	NAMES = S5ID TVHours ClassSize ReadingScore PctFRL;
+  	WITHIN = TVHours;
+  	BETWEEN = PctFRL;
+  	CLUSTER = S5ID;
+    USEVARIABLES = TVHours S5ID ReadingScore PctFRL;
+    MISSING = .;
+  ANALYSIS:	TYPE = TWOLEVEL RANDOM;
+  MODEL:
+  	%WITHIN%	
+  	Slope | ReadingScore ON TVHours;
+  	%BETWEEN%
+    Slope ON PctFRL;
+  	ReadingScore ON PctFRL;

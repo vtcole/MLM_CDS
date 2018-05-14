@@ -1,0 +1,232 @@
+Mplus VERSION 7.2
+MUTHEN & MUTHEN
+05/13/2018  10:48 PM
+
+INPUT INSTRUCTIONS
+
+   TITLE:	ECLS-K data, Slopes-as-outcomes;
+    DATA:	FILE = ecls-k.dat;
+    VARIABLE:	NAMES = S5ID TVHours ClassSize ReadingScore PctFRL;
+    	WITHIN = TVHours;
+    	CLUSTER = S5ID;
+      USEVARIABLES = TVHours S5ID ReadingScore;
+      MISSING = .;
+    ANALYSIS:	TYPE = TWOLEVEL;
+    MODEL:
+    	%WITHIN%	
+    	ReadingScore ON TVHours;
+
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+*** WARNING in MODEL command
+  A y-variable has been declared on the within level but not referred to on
+  the between level.  Please check that this is what is intended.  If this is not intended,
+  specify the variable as a within variable.  Problem with:  READINGSCORE
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  42
+*** WARNING
+  Data set contains cases with missing on x-variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on x-variables:  2000
+*** WARNING
+  Data set contains cases with missing on all variables except
+  x-variables.  These cases were not included in the analysis.
+  Number of cases with missing on all variables except x-variables:  889
+   5 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+ECLS-K data, Slopes-as-outcomes;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                       12374
+
+Number of dependent variables                                    1
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   READINGSCO
+
+Observed independent variables
+   TVHOURS
+
+Variables with special functions
+
+  Cluster variable      S5ID
+
+  Within variables
+   TVHOURS
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                   100
+Convergence criterion                                    0.100D-05
+Maximum number of EM iterations                                500
+Convergence criteria for the EM algorithm
+  Loglikelihood change                                   0.100D-02
+  Relative loglikelihood change                          0.100D-05
+  Derivative                                             0.100D-03
+Minimum variance                                         0.100D-03
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+
+Input data file(s)
+  ecls-k.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             1
+     Number of clusters                       2580
+
+     Average cluster size        4.796
+
+     Estimated Intraclass Correlations for the Y Variables
+
+                Intraclass
+     Variable  Correlation
+
+     READINGS     0.229
+
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              READINGS      TVHOURS
+              ________      ________
+ READINGS       1.000
+ TVHOURS        1.000         1.000
+
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        4
+
+Loglikelihood
+
+          H0 Value                      -52445.361
+          H0 Scaling Correction Factor      1.0385
+            for MLR
+          H1 Value                      -52445.360
+          H1 Scaling Correction Factor      1.0385
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                  104898.722
+          Bayesian (BIC)                104928.415
+          Sample-Size Adjusted BIC      104915.703
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.002*
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+          Scaling Correction Factor         1.0000
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             52.394
+          Degrees of Freedom                     1
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value for Within                   0.000
+          Value for Between                  0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Within Level
+
+ READINGSCO ON
+    TVHOURS           -1.431      0.198     -7.229      0.000
+
+ Residual Variances
+    READINGSCO       242.799      3.657     66.392      0.000
+
+Between Level
+
+ Means
+    READINGSCO        85.950      0.317    270.718      0.000
+
+ Variances
+    READINGSCO        72.635      4.303     16.879      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.101E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for multilevel analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  22:48:16
+        Ending Time:  22:48:16
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2014 Muthen & Muthen

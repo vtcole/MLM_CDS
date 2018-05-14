@@ -1,0 +1,14 @@
+ TITLE:	ECLS-K data;
+  DATA:	FILE = ecls-k.dat;
+  VARIABLE:	NAMES = S5ID TVHours ClassSize ReadingScore PctFRL;
+  	WITHIN = TVHours;
+  	BETWEEN = PctFRL;
+  	CLUSTER = S5ID;
+    USEVARIABLES = TVHours S5ID ReadingScore PctFRL;
+    MISSING = .;
+  ANALYSIS:	TYPE = TWOLEVEL;
+  MODEL:
+  	%WITHIN%	
+  	ReadingScore ON TVHours;
+  	%BETWEEN%
+  	ReadingScore ON PctFRL;
